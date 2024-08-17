@@ -12,17 +12,13 @@ class QuestionsController < ApplicationController
   end
 
   def create
-    @question = Question.new(question_params)
-    if @question.save
-      redirect_to @question, notice: '質問が投稿されました。'
-    else
-      render :new
-    end
+    Question.create(question_params)
+    redirect_to action: :index
   end
 
   private
 
   def question_params
-    params.require(:question).permit(:title, :body, :author)
+    params.require(:question).permit(:title, :content, :name)
   end
 end

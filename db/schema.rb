@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_08_15_030953) do
+ActiveRecord::Schema[7.0].define(version: 2024_08_17_025002) do
   create_table "posts", charset: "utf8mb4", force: :cascade do |t|
     t.text "content"
     t.datetime "created_at", null: false
@@ -19,10 +19,10 @@ ActiveRecord::Schema[7.0].define(version: 2024_08_15_030953) do
 
   create_table "questions", charset: "utf8mb4", force: :cascade do |t|
     t.string "title"
-    t.text "body"
+    t.text "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "author"
+    t.string "name"
   end
 
 end

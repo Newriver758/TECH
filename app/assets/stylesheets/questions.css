@@ -1,0 +1,49 @@
+/******************************************** 
+ リセット用
+*********************************************/
+* {
+  box-sizing: border-box;
+}
+
+header {
+  background-color: #1C3667;
+  height: 65px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  font-family: 'Roboto', sans-serif;
+}
+
+header .logo {
+  font-size: 23px;
+  color: #FFFFFF;
+  letter-spacing: 1.8px;
+  font-weight: 100;
+}
+
+header .ask-button {
+  background-color: #FFFFFF;
+  color: #3A3736;
+  font-size: 16px;
+  border-radius: 5px;
+  padding: 5px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+header .ask-button:hover {
+  background-color: #3A3736;
+}
+
+html,
+body,
+ul,
+li,
+h1,
+h2,
+p,
+div {
+  margin: 0;
+  padding: 0;
+}
