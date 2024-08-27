@@ -1,5 +1,5 @@
 <% @questions.each do |question| %>
-  タイトル：<%= question.title %><br>
-  内容：<%= question.content %><br>
+  タイトル：<%= link_to question.title, new_question_answer_path(question) %><br>
+  質問内容：<%= question.content %><br>
   投稿者名：<%= question.name %><br><br>
 <% end %>

@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  resources :questions, only: [:new, :create, :index, :show]
+  devise_for :users
+  resources :questions, only: [:new, :create, :index, :show] do
+    resources :answers, only: [:new, :create]
+  end
+
   root to: 'questions#index'
-  get 'questions/:id/show', to: 'questions#show', as: 'show_question'
 end

@@ -1,0 +1,12 @@
+<h1><%= @question.title %>への回答を投稿する</h1>
+
+<%= form_with(model: [@question, @answer], local: true) do |form| %>
+  <div class="field">
+    <%= form.label :content, "回答" %>
+    <%= form.text_area :content %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "回答を投稿" %>
+  </div>
+<% end %>
