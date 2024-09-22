@@ -14,7 +14,7 @@
 
   <body>
     <header>
-      <div class="logo">TechChat</div>
+      <a href="<%= @question ? question_prototypes_path(@question.id) : '#' %>" class="logo">TechChat</a>
       <button class="ask-button">質問する</button>
     </header>
     

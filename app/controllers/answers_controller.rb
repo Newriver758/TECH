@@ -10,7 +10,6 @@ class AnswersController < ApplicationController
     if @answer.save
       redirect_to @question, notice: '回答が投稿されました。'
     else
-      @answers = @question.answers
       render 'questions/show'
     end
   end

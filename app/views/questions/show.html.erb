@@ -1,6 +1,8 @@
-<h1><%= @question.title %></h1>
-<p>投稿者: <%= @question.author %></p>
-<p><%= @question.body %></p>
+<h1>質問詳細</h1>
+
+<p>タイトル: <%= @question.title %></p>
+<p>質問内容: <%= @question.content %></p>
+<p>投稿者: <%= @question.name %></p>
 
 <h2>回答を投稿する</h2>
 <%= form_with(model: [@question, @answer], local: true) do |form| %>
