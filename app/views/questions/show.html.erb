@@ -2,7 +2,7 @@
 
 <p>タイトル: <%= @question.title %></p>
 <p>質問内容: <%= @question.content %></p>
-<p>投稿者: <%= @question.name %></p>
+<p>投稿者: <%= @question.user.name %></p>
 
 <h2>回答を投稿する</h2>
 <%= form_with(model: [@question, @answer], local: true) do |form| %>
