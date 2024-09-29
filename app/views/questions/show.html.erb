@@ -2,22 +2,16 @@
 
 <p>タイトル: <%= @question.title %></p>
 <p>質問内容: <%= @question.content %></p>
-<p>投稿者: <%= @question.user.name %></p>
+<p>投稿者: <%= @question.name %></p>
 
 <h2>回答を投稿する</h2>
 <%= form_with(model: [@question, @answer], local: true) do |form| %>
-  <div class="field">
-    <%= form.label :content, "回答" %>
-    <%= form.text_area :content %>
-  </div>
-  <div class="actions">
-    <%= form.submit "回答を投稿" %>
-  </div>
+  <%= form.text_area :content, placeholder: "回答する" %><br>
+  <%= form.text_field :name, placeholder: "投稿者名" %><br>
+  <%= form.submit "POST" %><br>
 <% end %>
 
-<%= link_to "質問一覧に戻る", questions_path %>
-
-<h2>既存の回答</h2>
 <% @answers.each do |answer| %>
-  <p><%= answer.content %></p>
+  回答：<%= answer.content %><br>
+  投稿者名：<%= answer.name %><br><br>
 <% end %>

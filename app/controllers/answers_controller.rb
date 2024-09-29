@@ -1,25 +1,13 @@
 class AnswersController < ApplicationController
-  def new
-    @question = Question.find(params[:question_id])
-    @answer = @question.answers.build
-  end
-
+  
   def create
-    @question = Question.find(params[:question_id])
-    @answer = @question.answers.build(answer_params)
-    @answer.user = current_user
-
-    if @answer.save
-      redirect_to @question, notice: '回答が投稿されました。'
-    else
-      @answers = @question.answers
-      render 'questions/show'
-    end
+    Answer.create(answer_params)
+    redirect_to question_path(params[:question_id]) 
   end
 
   private
-
   def answer_params
-    params.require(:answer).permit(:content).merge(user_id: current_user.id)
+    params.require(:answer).permit(:content, :name).merge(question_id: params[:question_id])
   end
+  
 end

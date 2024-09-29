@@ -47,3 +47,20 @@ div {
   margin: 0;
   padding: 0;
 }
+
+.question-top__title {
+  width: 500px;
+  font-size: 14px;
+}
+
+.question-top__title a{
+  color: #000000;
+}
+
+.logo a {
+  font-size: 23px;
+  letter-spacing: 1.8px;
+  font-family: 'Roboto', sans-serif;
+  color: #FFFFFF;
+  text-decoration: none;
+}

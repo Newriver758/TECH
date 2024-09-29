@@ -1,7 +1,6 @@
 class QuestionsController < ApplicationController
   def index
     @questions = Question.all
-    @question = @questions.first
   end
 
   def show
@@ -15,8 +14,13 @@ class QuestionsController < ApplicationController
   end
 
   def create
-    Question.create(question_params)
-    redirect_to action: :index
+    @question = Question.new(question_params)
+    @question.user = current_user
+    if @question.save
+      redirect_to @question, notice: '質問が作成されました。'
+    else
+      render :new
+    end
   end
 
   private

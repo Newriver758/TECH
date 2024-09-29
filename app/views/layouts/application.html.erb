@@ -1,23 +1,28 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>TECH</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>TechChat</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">   
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_importmap_tags %>
   </head>
 
   <body>
     <header>
-      <a href="<%= @question ? question_prototypes_path(@question.id) : '#' %>" class="logo">TechChat</a>
-      <button class="ask-button">質問する</button>
+      <div class='header-contents'>
+        <div class='logo'>
+          <%= link_to 'TechChat', root_path %>
+        </div>
+        <div class='post-button'>
+          <%= link_to '質問する', new_question_path %>
+        </div>
+      </div>
     </header>
-    
+
     <%= yield %>
   </body>
 </html>
