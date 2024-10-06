@@ -15,9 +15,9 @@ class QuestionsController < ApplicationController
 
   def create
     @question = Question.new(question_params)
-    @question.user = current_user
+    @question.user = current_user if current_user.present?
     if @question.save
-      redirect_to @question, notice: '質問が作成されました。'
+      redirect_to @question
     else
       render :new
     end
@@ -26,6 +26,6 @@ class QuestionsController < ApplicationController
   private
 
   def question_params
-    params.require(:question).permit(:title, :content, :name)
+    params.require(:question).permit(:title, :content, :name, :user_id)
   end
 end
