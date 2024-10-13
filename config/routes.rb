@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
-  resources :questions, only: [:new, :create, :index, :show] do
-    resources :answers, only: [:new, :create]
+  resources :questions, only: [:index, :show, :new, :create] do
+    resources :answers, only: [:create]
   end
 
   root to: 'questions#index'

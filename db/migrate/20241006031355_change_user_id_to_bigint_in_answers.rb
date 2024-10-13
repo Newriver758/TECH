@@ -1,5 +1,5 @@
 class ChangeUserIdToBigintInAnswers < ActiveRecord::Migration[7.0]
-  def change
+  def up
     change_column :answers, :user_id, :bigint
   end
 
